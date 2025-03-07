@@ -25,12 +25,6 @@ public class EmployeeController {
 
     IEmployeeService employeeService;
 
-//    @GetMapping()
-//    public ResponseEntity<ApiResponsi<List<Employee>>> getEmployee(@RequestParam(defaultValue = "") String name) {
-//       return ResponseEntity.ok(ApiResponsi.<List<Employee>>builder()
-//               .data(employeeService.findByNameContaining(name))
-//                .build());
-//    }
     @GetMapping
     public ResponseEntity<?> getEmployees(EmployeeSearchRequest employeeSearchRequest) {
         return ResponseEntity.ok(employeeService.findByAttribute(employeeSearchRequest));
