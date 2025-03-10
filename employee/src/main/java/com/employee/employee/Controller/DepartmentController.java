@@ -31,7 +31,7 @@ public class DepartmentController {
         return iDepartmentService.findById(id)
                 .map(ResponseEntity::ok)
                 .orElseThrow(() -> new ApiException(ErrorCode.DEPARTMENT_NOT_EXIST));
-    }
+    }//
 
     @PostMapping
     public ResponseEntity<?> createDepartment(@RequestBody Department department) {
