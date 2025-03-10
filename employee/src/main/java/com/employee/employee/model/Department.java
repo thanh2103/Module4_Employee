@@ -18,7 +18,8 @@ public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer department_id;
-    String department_name;
+    @Column(name = "department_name") // Đúng với tên cột trong DB
+    String name;
 
     @OneToMany(mappedBy = "department")
     @JsonIgnoreProperties("department")
